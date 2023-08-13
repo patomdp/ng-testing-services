@@ -1,9 +1,9 @@
-import { MasterService } from './master.service';
-import { ValueService } from './value.service';
+### TestBed + Spies
 
-import { TestBed } from '@angular/core/testing';
+Le vamos a decir que valueService sea una dependencia explicita que vamos a espiar
+let valueServiceSpy: jasmine.SpyObj<ValueService>
 
-// With Test Bed
+ahora le digo al modulo que en lugar de resolver la dependencia real, resuelva la del spy
 
 fdescribe('MasterService', () => {
   let masterService: MasterService;
@@ -28,18 +28,3 @@ fdescribe('MasterService', () => {
     // forzamos el tipado e inyectamos el servicio
     valueServiceSpy = TestBed.inject(ValueService) as jasmine.SpyObj<ValueService>;
   }); 
-
-  it('should be created',() => {
-    expect(masterService).toBeTruthy();
-  });
-
-  it('should call the method #getValue() from valueService',() => {
-    valueServiceSpy.getValue.and.returnValue('fake value');
-    expect(masterService.getValue()).toBe('fake value');
-    // comprobar que se llame el metodo
-    expect(valueServiceSpy.getValue).toHaveBeenCalled();
-    // comprobar que se llame el metodo una vez
-    expect(valueServiceSpy.getValue).toHaveBeenCalledTimes(1);
-  });
-
-});

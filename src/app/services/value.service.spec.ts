@@ -64,4 +64,12 @@ describe('ValueService', () => {
       expect(response).toBe('promise value');
     });
   });
+
+  // TODO: Esta dando errores
+  // describe('Test for #getObservableValue',() => {
+  //   const observable = service.getObservableValue().subscribe();
+  //   console.log('observable value: ' + observable);
+  //   observable.unsubscribe();
+  //   // expect(observable).toBe(Observable<String>)
+  // });
 });

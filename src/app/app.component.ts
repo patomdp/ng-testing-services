@@ -12,6 +12,7 @@ export class AppComponent {
   ngOnInit() {
     const calculator = new Calculator();
     let calculatorTest = calculator.interestCalculator(345251, 81.8);
-    console.log('Calculator test: ', '€' + calculatorTest);
+    console.log('Monto $345251', 'interes: % 81.8');
+    console.log('Ganancias', '$' + calculatorTest);
   }
 }

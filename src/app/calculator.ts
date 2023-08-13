@@ -12,7 +12,6 @@ export class Calculator {
 
   // calcula el interes a partir del monto inicial y el porcentaje de interes
   interestCalculator(montoInicial: number, interes: number): number {
-    // const monto = montoInicial;
     const interesCalculado = montoInicial * (interes / 100);
     const interesMensual = this.earningsCalculator(interesCalculado, 365);
     const interesAnual = this.earningsCalculator(interesCalculado, 12);

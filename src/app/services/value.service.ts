@@ -21,6 +21,9 @@ export class ValueService {
     return Promise.resolve('promise value');
   }
 
+  // getObservableValue(){
+  //   return of(this.value);
+  // }
   getObservableValue(){
     return of('value');
   }
